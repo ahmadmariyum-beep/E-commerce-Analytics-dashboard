@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: ecommerce-analytics-dashboard
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run archive/app.py --server.address 0.0.0.0 --server.port $PORT
+    healthCheckPath: /_stcore/health
